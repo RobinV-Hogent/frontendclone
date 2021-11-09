@@ -1,5 +1,6 @@
 import { useParams } from "react-router";
 import QuizCard from "../components/QuizCard";
+import QuizCategory from "../components/QuizCategory";
 
 
 
@@ -11,7 +12,7 @@ export default function Home() {
 
     return (
         <>
-            <QuizCard></QuizCard>
+            <QuizCategory></QuizCategory>
         </>
         );
 }
