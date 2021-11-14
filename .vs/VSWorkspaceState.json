@@ -1,6 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\react-quiz-project-rv",
+    "\\react-quiz-project-rv\\public",
+    "\\react-quiz-project-rv\\src",
+    "\\react-quiz-project-rv\\src\\components",
+    "\\react-quiz-project-rv\\src\\contexts",
+    "\\react-quiz-project-rv\\src\\pages",
+    "\\react-quiz-project-rv\\src\\styles"
   ],
   "PreviewInSolutionExplorer": false
 }

@@ -7,33 +7,50 @@ import {
 	useCallback
 } from 'react';
 import axios from 'axios';
-import config from '../config.json';
+import { QUIZ_DATA } from "../data/mock-data"
+
 
 export const QuizContext = createContext();
 export const useQuizzes = () => useContext(QuizContext);
 
-export const QuizzesProvider = ({
-	children
-}) => {
+export const QuizProvider = ({ children }) => {
 
-	// states
-	// ...
+	const [quizzes, setQuizzes] = useState([]);
+	const [error, setError] = useState();
+	const [loading, setLoading] = useState(false);
+	const [currentQuiz, setCurrentQuiz] = useState({});
 
-	// haalt de quizzes weer op door de lijst van quizzes te refreshen
-	const refreshQuizzes = useCallback(async () => {}, []);
+	const refreshQuizzes = useCallback(async () => {
+		try {
+			setError();
+			setLoading(true);
+			setQuizzes(QUIZ_DATA)
+		} catch (error) {
+			setError(error);
+		} finally {
+			setLoading(false);
+		}
+	}, []);
+
+	useEffect(() => {
+		refreshQuizzes();
+	}, [refreshQuizzes]);
+
 
 	const createQuiz = useCallback(async ({ /* parameters waarmee je een quiz kan maken */ }) => {}, []);
 
 	const deleteQuiz = useCallback(async (id /* ID van de quiz die verwijderd moet worden */) => {}, []);
 
 	const value = useMemo(() => ({
-		// states doorgeven
-		// ...
-	}), [/* DEPENDENCIES */]);
+		quizzes,
+		error,
+		loading,
+		currentQuiz,
+	}), [quizzes, error, loading, currentQuiz, createQuiz, deleteQuiz]);
 
 	return (
-		<QuizzesContext.Provider value={value} >
+		<QuizContext.Provider value={value} >
 			{children}
-		</QuizzesContext.Provider>
+		</QuizContext.Provider>
 	);
 };

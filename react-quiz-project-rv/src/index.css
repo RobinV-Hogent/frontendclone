@@ -3,18 +3,23 @@ body{
 }
 
 main{
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
 }
 
-.quizlist{
-    width: 100%;
-    overflow:scroll;
-    overflow-y: hidden;
-    border: none
+.navbar{
+    margin-bottom: 50px;
 }
 
-.list-group-item{
+.quizlist {
+    width: 100%;
+    overflow: scroll;
+    overflow-y: hidden;
+    border: none;
+    margin-bottom: 50px;
+}
+
+.list-group-item {
     border: none
 }
 
