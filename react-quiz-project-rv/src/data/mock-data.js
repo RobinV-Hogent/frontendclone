@@ -80,4 +80,39 @@ const CATEGORY_DATA = [
     }
 ]
 
-export { QUIZ_DATA, CATEGORY_DATA };
+
+const QUESTIONS_DATA = [
+
+    {
+        id: "1",
+        quiz_id: "1",
+        question: "What's the captital of Belgium?",
+        answer1: "Paris",
+        answer2: "Madrid",
+        answer3: "Brussels",
+        correct_answer: "Brussels"
+    },
+
+    {
+        id: "2",
+        quiz_id: "1",
+        question: "What's the captital of France?",
+        answer1: "Paris",
+        answer2: "Warschau",
+        answer3: "Sofia",
+        correct_answer: "Paris"
+    },
+
+    {
+        id: "3",
+        quiz_id: "1",
+        question: "What's the captital of Germany?",
+        answer1: "Reykjavik",
+        answer2: "Madrid",
+        answer3: "Berlin",
+        correct_answer: "Berlin"
+    }
+
+]
+
+export { QUIZ_DATA, CATEGORY_DATA, QUESTIONS_DATA };

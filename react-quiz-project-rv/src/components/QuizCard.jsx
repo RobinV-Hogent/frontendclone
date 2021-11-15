@@ -1,11 +1,21 @@
-import { useContext } from 'react';
+import { useContext, useCallback } from 'react';
 import { Card, Button, Badge } from 'react-bootstrap'
-import { CategoryContext } from '../contexts/CategoryProvider';
+import { CategoryContext, useCategories } from '../contexts/CategoryProvider';
+import { QuizContext, useQuizzes } from '../contexts/QuizProvider';
+import { Link } from 'react-router-dom'
 
 
 const QuizCard = ({ id, title, description, img, rating, category }) => {
 
-    const { categories } = useContext(CategoryContext)
+    //#region PROVIDERS
+    const { categories } = useCategories()
+    const { setCurrentQuiz, currentQuiz } = useQuizzes()
+    //#endregion
+
+
+    const changeSelectedQuiz = useCallback((e) => {
+        setCurrentQuiz({ id, title, description, img, rating, category })
+    })
 
     return (
             <Card style={{ width: '18rem' }}>
@@ -23,7 +33,11 @@ const QuizCard = ({ id, title, description, img, rating, category }) => {
                     <Card.Text>
                         Rating: <meter id="disk_d" value={ rating }>60%</meter>
                     </Card.Text>
-                    <Button variant="primary">Play</Button>
+                
+
+                <Link className="button" to={`/quiz/info`}>
+                    <Button onClick={changeSelectedQuiz} variant="primary">Info</Button>
+                </Link>
                 </Card.Body>
             </Card>
         )

@@ -37,6 +37,12 @@ export const QuizProvider = ({ children }) => {
 	}, [refreshQuizzes]);
 
 
+	useEffect(() => {
+		console.log(`currentQuiz has changed to: ${currentQuiz.title}`)
+	}, [currentQuiz])
+
+
+
 	const createQuiz = useCallback(async ({ /* parameters waarmee je een quiz kan maken */ }) => {}, []);
 
 	const deleteQuiz = useCallback(async (id /* ID van de quiz die verwijderd moet worden */) => {}, []);
@@ -46,7 +52,8 @@ export const QuizProvider = ({ children }) => {
 		error,
 		loading,
 		currentQuiz,
-	}), [quizzes, error, loading, currentQuiz, createQuiz, deleteQuiz]);
+		setCurrentQuiz,
+	}), [quizzes, error, loading, currentQuiz, createQuiz, deleteQuiz, setCurrentQuiz]);
 
 	return (
 		<QuizContext.Provider value={value} >

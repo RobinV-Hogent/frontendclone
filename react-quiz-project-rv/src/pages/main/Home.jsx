@@ -1,8 +1,8 @@
 import { useContext } from 'react'
 import { useParams } from "react-router";
-import QuizCard from "../components/QuizCard";
-import QuizCategory from "../components/QuizCategory";
-import { CategoryContext } from "../contexts/CategoryProvider";
+import QuizCard from "../../components/QuizCard";
+import QuizCategory from "../../components/QuizCategory";
+import { CategoryContext } from "../../contexts/CategoryProvider";
 
 
 
@@ -12,6 +12,7 @@ export default function Home() {
     // const params = useParams()
 
     const { categories } = useContext(CategoryContext)
+
 
     return (
         <>

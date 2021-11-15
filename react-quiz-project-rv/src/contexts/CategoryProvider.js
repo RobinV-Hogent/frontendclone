@@ -29,7 +29,7 @@ export const CategoryProvider = ({ children }) => {
 	const value = useMemo(() => ({
 		categories,
 		currentCategory,
-	}), [categories]);
+	}), [categories, currentCategory]);
 
 	return (
 		<CategoryContext.Provider value={value} >

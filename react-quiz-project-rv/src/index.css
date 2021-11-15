@@ -9,6 +9,7 @@ main{
 
 .navbar{
     margin-bottom: 50px;
+    z-index: 999;
 }
 
 .quizlist {
@@ -46,4 +47,14 @@ main{
 
 ::-webkit-scrollbar-thumb:hover {
     background: #c2c2c2;
+}
+
+
+.banner{
+    width: 100%;
+    transform: translateY(-60px);
+    filter:sepia();
+    height: 500px;
+    object-fit: cover;
+    border-radius: 0 0 50px 50px;
 }
