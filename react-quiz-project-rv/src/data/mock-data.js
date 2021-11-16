@@ -52,6 +52,33 @@ const QUIZ_DATA = [
         category: 1,
         rating: 0.3
     },
+
+    {
+        id: "7",
+        img: "https://images.pexels.com/photos/234315/pexels-photo-234315.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        title: "Berlin Quiz",
+        description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+        category: 1,
+        rating: 0.8
+    },
+
+    {
+        id: "8",
+        img: "https://images.pexels.com/photos/1701595/pexels-photo-1701595.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        title: "Rome Quiz",
+        description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+        category: 1,
+        rating: 0.65
+    },
+
+    {
+        id: "9",
+        img: "https://images.pexels.com/photos/1595085/pexels-photo-1595085.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        title: "Brussels Quiz",
+        description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+        category: 1,
+        rating: 0.95
+    },
 ]
 
 
