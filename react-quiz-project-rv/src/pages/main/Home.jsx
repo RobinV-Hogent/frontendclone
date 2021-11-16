@@ -18,14 +18,18 @@ export default function Home() {
         <>
             <div className="banner2">
                 <div className="banner2-content">
-                    <h1>Robin Quizzes</h1>
+                    <p className="banner2-title">Robin Quizzes</p>
                     <p>1.000.000 quizzes available right now for you to solve</p>
+                    <a href="#quizzes"><button className="info-button">QUIZZES</button></a>
+
                 </div>
             </div>
 
+            <div id="quizzes">
             {categories.map((cat) => {
                 return <QuizCategory key={cat.id} {...cat} className="quizCategory"></QuizCategory>
             })}
+            </div>
         </>
         );
 }

@@ -18,7 +18,7 @@ const QuizCard = ({ id, title, description, img, rating, category }) => {
     })
 
     return (
-            <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '18rem', borderRadius: '0px', border: '1px solid black', transform: 'skew(-3deg)', boxShadow: '1px 1px 0 0, 2px 2px 0 0, 3px 3px 0 0, 4px 4px 0 0, 5px 5px 0 0' }}>
             <Card.Img variant="top" alt="QuizCard Image" className="quizcard-image" src={ img } />
                 <Card.Body>
                     <Card.Title>{ title }</Card.Title>
@@ -35,8 +35,8 @@ const QuizCard = ({ id, title, description, img, rating, category }) => {
                     </Card.Text>
                 
 
-                <Link className="button" to={`/quiz/info`}>
-                    <Button onClick={changeSelectedQuiz} variant="primary">Info</Button>
+                <Link to={`/quiz/info`}>
+                    <button onClick={changeSelectedQuiz} className="info-button">Info</button>
                 </Link>
                 </Card.Body>
             </Card>

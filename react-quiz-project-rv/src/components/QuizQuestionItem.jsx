@@ -9,8 +9,8 @@ export default function QuizQuestionItem({ id, question, answer1, answer2, answe
 
     let s = 0
 
-    const changeOption = () => {
-
+    const changeOption = (val) => {
+        setOption(val)
     }
 
     return (
@@ -22,10 +22,11 @@ export default function QuizQuestionItem({ id, question, answer1, answer2, answe
                 </p>
                 <hr />
                 <p className="mb-0 answeroptions">
-                    <Button className="optionButton" variant="secondary" onClick={() => changeOption(answer1)}>{answer1}</Button>
-                    <Button className="optionButton" variant="secondary" onClick={() => changeOption(answer2)}>{answer2}</Button>
-                    <Button className="optionButton" variant="secondary" onClick={() => changeOption(answer3)}>{answer3}</Button>
+                    <button className="info-button optionButton" variant="secondary" onClick={() => changeOption(answer1)}>{answer1}</button>
+                    <button className="info-button optionButton" variant="secondary" onClick={() => changeOption(answer2)}>{answer2}</button>
+                    <button className="info-button optionButton" variant="secondary" onClick={() => changeOption(answer3)}>{answer3}</button>
                 </p>
+                <br/>
                 <p className="mb-0 answeroptions">
                     Selected Value: {option}
                 </p>

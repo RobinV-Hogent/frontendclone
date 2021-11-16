@@ -1,10 +1,11 @@
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { QuizContext } from "../../contexts/QuizProvider";
-import { Table, Badge } from 'react-bootstrap'
+import { Table, Badge, Button } from 'react-bootstrap'
 import { CategoryContext } from '../../contexts/CategoryProvider';
 
 export default function QuizIndex() {
-    const { quizzes } = useContext(QuizContext)
+    const { quizzes, setCurrentQuiz } = useContext(QuizContext)
     const { categories } = useContext(CategoryContext)
 
 
@@ -35,9 +36,11 @@ export default function QuizIndex() {
                                     <td>{quizItem.description}</td>
                                     <td><Badge bg="dark" text="light">{categories.filter((cat) => cat.id === quizItem.category)[0].cat_name}</Badge></td>
                                     <td><meter value={quizItem.rating} /></td>
-
-                                    {/*edit en delete pagina nog maken*/}
-                                    <td><a href="edit">Edit</a></td>
+                                    <td>
+                                        <Link className="button" to={`/quiz/edit`}>
+                                            <Button onClick={() => setCurrentQuiz(quizItem)} variant="primary">Edit</Button>
+                                        </Link>
+                                    </td>
                                     <td><a href="delete">Delete</a></td>
                                 </tr>
                             )

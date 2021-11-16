@@ -3,6 +3,7 @@ import Home from './pages/main/Home'
 import QuizQuestion from './pages/main/QuizQuestion'
 import QuizIndex from './pages/quiz/Index'
 import QuizCreate from './pages/quiz/Create'
+import QuizEdit from './pages/quiz/Edit'
 import QuizView from './pages/main/QuizView'
 import CategoryIndex from './pages/category/Index'
 
@@ -29,7 +30,7 @@ function App() {
             <QuizProvider>
                 <CategoryProvider>
                     <QuestionProvider>
-                    <Navbar className="navbar" collapseOnSelect expand="lg" bg="dark" variant="dark">
+                    <Navbar className="navbar" collapseOnSelect expand="lg" variant="dark">
                         <Container>
                             <Navbar.Brand href="/">Robin Quizzes</Navbar.Brand>
                             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -73,6 +74,9 @@ function App() {
                                     </Route>
                                     <Route exact path="/quiz/info">
                                         <QuizView />
+                                    </Route>
+                                    <Route exact path="/quiz/edit">
+                                        <QuizEdit />
                                     </Route>
 
 

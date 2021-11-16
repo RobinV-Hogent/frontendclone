@@ -19,7 +19,7 @@ const QuizView = () => {
             
             
             <Link className="button" to={`/quiz/play`}>
-                <Button variant="success">Play The Quiz</Button>
+                <button className="info-button">Play The Quiz</button>
             </Link>
 
         </>
