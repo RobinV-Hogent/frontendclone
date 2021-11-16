@@ -10,7 +10,7 @@ export default function QuizCategory({ id, cat_name }) {
 	return (
 		<>
 			<h2>{cat_name}</h2>
-			<ListGroup horizontal className="quizlist">
+			<ListGroup horizontal className="quizlist" style={{ alignItems: 'stretch'}}>
 				{
 					quizzes.filter(quiz => quiz.category === id).map((quiz) => {
 						return <ListGroup.Item key={quiz.id}><QuizCard {...quiz}></QuizCard></ListGroup.Item>

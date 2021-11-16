@@ -2,15 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\react-quiz-project-rv",
+    "\\react-quiz-project-rv\\public",
     "\\react-quiz-project-rv\\src",
     "\\react-quiz-project-rv\\src\\components",
     "\\react-quiz-project-rv\\src\\data",
     "\\react-quiz-project-rv\\src\\hooks",
-    "\\react-quiz-project-rv\\src\\pages",
-    "\\react-quiz-project-rv\\src\\pages\\category",
-    "\\react-quiz-project-rv\\src\\pages\\main",
-    "\\react-quiz-project-rv\\src\\pages\\quiz"
+    "\\react-quiz-project-rv\\src\\pages"
   ],
-  "SelectedNode": "\\react-quiz-project-rv\\src\\App.js",
   "PreviewInSolutionExplorer": false
 }

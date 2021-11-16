@@ -150,3 +150,22 @@ h1, h2, h3, h4, h5 {
 .quizCard{
     background-color: red;
 }
+
+.cardbody{
+    display: flex;
+    flex-direction: column;
+}
+
+.endCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+
+.cardDesc{
+    height: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
