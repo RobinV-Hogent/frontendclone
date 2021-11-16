@@ -34,6 +34,7 @@ export const QuizProvider = ({ children }) => {
 
 	useEffect(() => {
 		refreshQuizzes();
+		console.log('%c QuizProvider: refreshQuizzes was called', 'color: orange')
 	}, [refreshQuizzes]);
 
 

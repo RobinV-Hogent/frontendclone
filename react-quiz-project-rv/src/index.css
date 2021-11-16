@@ -12,6 +12,20 @@ main{
     z-index: 999;
 }
 
+.answeroptions{
+    display: flex;
+    justify-content: space-around;
+}
+
+.questionCard{
+    margin-bottom: 500px;
+}
+
+.optionButton {
+    width: 100%;
+    margin: 0 20px;
+}
+
 .quizlist {
     width: 100%;
     overflow: scroll;

@@ -17,6 +17,7 @@ import './index.css'
 import { QuizProvider } from './contexts/QuizProvider';
 import { CategoryProvider } from './contexts/CategoryProvider';
 import { QuestionProvider } from './contexts/QuestionProvider'
+import { ScoreProvider } from './contexts/ScoreProvider';
 
 
 
@@ -24,7 +25,7 @@ import { QuestionProvider } from './contexts/QuestionProvider'
 
 function App() {
     return (
-        
+            <ScoreProvider>
             <QuizProvider>
                 <CategoryProvider>
                     <QuestionProvider>
@@ -86,7 +87,7 @@ function App() {
                     </QuestionProvider>
                 </CategoryProvider>
             </QuizProvider>
-        
+            </ScoreProvider>
   );
 }
 
