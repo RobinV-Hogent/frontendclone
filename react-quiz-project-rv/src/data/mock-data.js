@@ -138,6 +138,36 @@ const QUESTIONS_DATA = [
         answer2: "Madrid",
         answer3: "Berlin",
         correct_answer: "Berlin"
+    },
+
+    {
+        id: "4",
+        quiz_id: "6",
+        question: "In which continent is Paris Situated",
+        answer1: "America",
+        answer2: "Europe",
+        answer3: "Asia",
+        correct_answer: "Europe"
+    },
+
+    {
+        id: "5",
+        quiz_id: "6",
+        question: "In which continent is Paris Situated",
+        answer1: "America",
+        answer2: "Europe",
+        answer3: "Asia",
+        correct_answer: "Europe"
+    },
+
+    {
+        id: "6",
+        quiz_id: "6",
+        question: "In which continent is Paris Situated",
+        answer1: "America",
+        answer2: "Europe",
+        answer3: "Asia",
+        correct_answer: "Europe"
     }
 
 ]

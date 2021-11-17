@@ -1,16 +1,25 @@
 import QuizQuestionItem from '../../components/QuizQuestionItem'
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react'
 import { Button, Alert, Tab, ListGroup, Col, Row } from 'react-bootstrap'
-import { useQuizzes } from '../../contexts/QuizProvider';
-import { useQuestions } from '../../contexts/QuestionProvider';
+import { useQuizzes } from '../../contexts/QuizProvider'
+import { useQuestions } from '../../contexts/QuestionProvider'
+import { useQuizQuestions } from '../../contexts/QuizQuestionsProvider'
+import { Link } from 'react-router-dom'
 
 export default function QuizQuestion() {
 
     const { currentQuiz } = useQuizzes()
     const { questions } = useQuestions()
+    const { questionsWithAnswers, setQuestionsWithAnswers } = useQuizQuestions()
 
-    console.log(currentQuiz)
-    console.log(questions)
+    useEffect(() => {
+        setQuestionsWithAnswers([])
+        console.table(currentQuiz)
+        console.log(questionList)
+    }, [setQuestionsWithAnswers])
+
+    
+    
 
     const questionList = questions.filter((e) => e.quiz_id === currentQuiz.id)
 
@@ -23,17 +32,18 @@ export default function QuizQuestion() {
             <img src={currentQuiz.img} className="banner" />
 
             {questionList.map((qu) => {
+                questionsWithAnswers.push({question_id: qu.id, question: qu.question, user_answer: '', correct_answer: qu.correct_answer})
                 qu.qu_no = question_no
                 question_no = question_no + 1
-                item = <QuizQuestionItem key={qu.id} {...qu}></QuizQuestionItem>
-                quizQuestionItems.push(item)
-                console.log(item)
-                return item
+                return <QuizQuestionItem key={qu.id} {...qu}></QuizQuestionItem>
             })}
 
-            {console.log(quizQuestionItems)}
-
-            {/*<Button onClick={checkAnswers}>Validate</Button>*/}
+            <center>
+                <Link className="button" to={`/quiz/results`}>
+                    <button className="info-button">Play The Quiz</button>
+                </Link>
+            </center>
+            
         </>
 
 

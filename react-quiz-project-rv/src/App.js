@@ -5,6 +5,7 @@ import QuizIndex from './pages/quiz/Index'
 import QuizCreate from './pages/quiz/Create'
 import QuizEdit from './pages/quiz/Edit'
 import QuizView from './pages/main/QuizView'
+import QuizResults from './pages/main/QuizResults'
 import CategoryIndex from './pages/category/Index'
 
 import {
@@ -19,6 +20,7 @@ import { QuizProvider } from './contexts/QuizProvider';
 import { CategoryProvider } from './contexts/CategoryProvider';
 import { QuestionProvider } from './contexts/QuestionProvider'
 import { ScoreProvider } from './contexts/ScoreProvider';
+import { QuizQuestionsProvider } from './contexts/QuizQuestionsProvider';
 
 
 
@@ -28,8 +30,9 @@ function App() {
     return (
             <ScoreProvider>
             <QuizProvider>
-                <CategoryProvider>
-                    <QuestionProvider>
+            <CategoryProvider>
+            <QuestionProvider>
+            <QuizQuestionsProvider>
                     <Navbar className="navbar" collapseOnSelect expand="lg" variant="dark">
                         <Container>
                             <Navbar.Brand href="/">Robin Quizzes</Navbar.Brand>
@@ -78,6 +81,9 @@ function App() {
                                     <Route exact path="/quiz/edit">
                                         <QuizEdit />
                                     </Route>
+                                    <Route exact path="/quiz/results">
+                                          <QuizResults />      
+                                    </Route>
 
 
                                     {/*category route*/}
@@ -88,8 +94,9 @@ function App() {
                             </Router>
                         </div>
                     </main>
-                    </QuestionProvider>
-                </CategoryProvider>
+            </QuizQuestionsProvider>
+            </QuestionProvider>
+            </CategoryProvider>
             </QuizProvider>
             </ScoreProvider>
   );

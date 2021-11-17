@@ -43,7 +43,7 @@ const QuizCard = ({ id, title, description, img, rating, category }) => {
                 </div>
                 </Card.Body>
             </Card>
-        )
+        )   
 }
 
 export default QuizCard;

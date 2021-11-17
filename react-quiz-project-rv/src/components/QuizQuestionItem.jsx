@@ -1,16 +1,25 @@
 import { useState, useEffect, useMemo, useCallback } from 'react'
 import { Alert, Button } from 'react-bootstrap'
+import { useQuizQuestions } from '../contexts/QuizQuestionsProvider'
+import { useQuestions } from '../contexts/QuestionProvider'
 import { useScore } from '../contexts/ScoreProvider'
+import QuizQuestion from '../pages/main/QuizQuestion'
+import { Link } from 'react-router-dom'
 
 export default function QuizQuestionItem({ id, question, answer1, answer2, answer3, correct_answer, qu_no }) {
 
     const { score, setScore } = useScore()
+    const { questionsWithAnswers, setQuestionsWithAnswers } = useQuizQuestions()
+    const { questions } = useQuestions()
+
     const [option, setOption] = useState(answer1)
+
 
     let s = 0
 
     const changeOption = (val) => {
         setOption(val)
+        questionsWithAnswers.filter((q) => q.question_id === id)[0].user_answer = val
     }
 
     return (
