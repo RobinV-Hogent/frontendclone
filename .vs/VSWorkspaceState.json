@@ -5,10 +5,12 @@
     "\\react-quiz-project-rv\\public",
     "\\react-quiz-project-rv\\src",
     "\\react-quiz-project-rv\\src\\components",
+    "\\react-quiz-project-rv\\src\\contexts",
     "\\react-quiz-project-rv\\src\\data",
     "\\react-quiz-project-rv\\src\\hooks",
-    "\\react-quiz-project-rv\\src\\pages"
+    "\\react-quiz-project-rv\\src\\pages",
+    "\\react-quiz-project-rv\\src\\pages\\quiz"
   ],
-  "SelectedNode": "\\react-quiz-project-rv\\src\\components\\QuizCategory.jsx",
+  "SelectedNode": "\\react-quiz-project-rv\\src\\data\\mock-data.js",
   "PreviewInSolutionExplorer": false
 }

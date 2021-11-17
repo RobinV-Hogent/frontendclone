@@ -41,7 +41,11 @@ export default function QuizIndex() {
                                             <Button onClick={() => setCurrentQuiz(quizItem)} variant="primary">Edit</Button>
                                         </Link>
                                     </td>
-                                    <td><a href="delete">Delete</a></td>
+                                    <td>
+                                        <Link className="button" to={`/quiz/delete`}>
+                                            <Button onClick={() => setCurrentQuiz(quizItem)} variant="danger">Delete</Button>
+                                        </Link>
+                                    </td>
                                 </tr>
                             )
                         })

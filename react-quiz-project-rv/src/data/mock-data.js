@@ -90,10 +90,6 @@ const CATEGORY_DATA = [
         cat_name: "Cities"
     },
     {
-        id: 2,
-        cat_name: "Popular"
-    },
-    {
         id: 3,
         cat_name: "Games"
     },
@@ -112,7 +108,7 @@ const QUESTIONS_DATA = [
 
     {
         id: "1",
-        quiz_id: "1",
+        quiz_id: "bf5f289e-47c1-11ec-81d3-0242ac130003",
         question: "What's the captital of Belgium?",
         answer1: "Paris",
         answer2: "Madrid",
@@ -122,7 +118,7 @@ const QUESTIONS_DATA = [
 
     {
         id: "2",
-        quiz_id: "1",
+        quiz_id: "bf5f289e-47c1-11ec-81d3-0242ac130003",
         question: "What's the captital of France?",
         answer1: "Paris",
         answer2: "Warschau",
@@ -132,7 +128,7 @@ const QUESTIONS_DATA = [
 
     {
         id: "3",
-        quiz_id: "1",
+        quiz_id: "bf5f289e-47c1-11ec-81d3-0242ac130003",
         question: "What's the captital of Germany?",
         answer1: "Reykjavik",
         answer2: "Madrid",

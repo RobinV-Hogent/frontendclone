@@ -7,6 +7,8 @@ export default function QuizCategory({ id, cat_name }) {
 
 	const { quizzes } = useContext(QuizContext)
 
+	//console.log(quizzes)
+
 	return (
 		<>
 			<h2>{cat_name}</h2>

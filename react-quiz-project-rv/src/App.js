@@ -3,6 +3,7 @@ import Home from './pages/main/Home'
 import QuizQuestion from './pages/main/QuizQuestion'
 import QuizIndex from './pages/quiz/Index'
 import QuizCreate from './pages/quiz/Create'
+import QuizDelete from './pages/quiz/Delete'
 import QuizEdit from './pages/quiz/Edit'
 import QuizView from './pages/main/QuizView'
 import QuizResults from './pages/main/QuizResults'
@@ -83,6 +84,9 @@ function App() {
                                     </Route>
                                     <Route exact path="/quiz/results">
                                           <QuizResults />      
+                                    </Route>
+                                    <Route exact path="/quiz/delete">
+                                        <QuizDelete />
                                     </Route>
 
 

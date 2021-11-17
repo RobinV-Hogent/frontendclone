@@ -7,6 +7,7 @@ import {
 	useCallback
 } from 'react';
 import axios from 'axios';
+import { useFetch } from '../hooks/useFetch';
 import { QUIZ_DATA } from "../data/mock-data"
 
 
@@ -16,32 +17,17 @@ export const useQuizzes = () => useContext(QuizContext);
 export const QuizProvider = ({ children }) => {
 
 	const [quizzes, setQuizzes] = useState([]);
-	const [error, setError] = useState();
-	const [loading, setLoading] = useState(false);
 	const [currentQuiz, setCurrentQuiz] = useState({});
 
+	const { data: data } = useFetch('http://localhost:9000/api/quizzes', []);
+
 	const refreshQuizzes = useCallback(async () => {
-		try {
-			setError();
-			setLoading(true);
-			setQuizzes(QUIZ_DATA)
-		} catch (error) {
-			setError(error);
-		} finally {
-			setLoading(false);
-		}
-	}, []);
+		setQuizzes(data)
+	});
 
 	useEffect(() => {
-		refreshQuizzes();
-		console.log('%c QuizProvider: refreshQuizzes was called', 'color: orange')
-	}, [refreshQuizzes]);
-
-
-	useEffect(() => {
-		console.log(`currentQuiz has changed to: ${currentQuiz.title}`)
-	}, [currentQuiz])
-
+		refreshQuizzes()
+	}, [refreshQuizzes])
 
 
 	const createQuiz = useCallback(async ({ /* parameters waarmee je een quiz kan maken */ }) => {}, []);
@@ -50,11 +36,10 @@ export const QuizProvider = ({ children }) => {
 
 	const value = useMemo(() => ({
 		quizzes,
-		error,
-		loading,
+		setQuizzes,
 		currentQuiz,
 		setCurrentQuiz,
-	}), [quizzes, error, loading, currentQuiz, createQuiz, deleteQuiz, setCurrentQuiz]);
+	}), [quizzes, currentQuiz, createQuiz, deleteQuiz, setCurrentQuiz]);
 
 	return (
 		<QuizContext.Provider value={value} >
