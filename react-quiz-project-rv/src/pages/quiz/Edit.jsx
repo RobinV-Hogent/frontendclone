@@ -1,20 +1,11 @@
-import { useQuizzes } from "../../contexts/QuizProvider"
-import { useForm, FormProvider } from "react-hook-form";
-import { useEffect, useCallback } from "react";
+import { useQuizzes } from "../../contexts/QuizProvider";
 
 export default function QuizEdit() {
+  const { currentQuiz } = useQuizzes();
 
-    const { currentQuiz } = useQuizzes()
-
-    return (
-        <>
-            <FormProvider>
-                <h1>Edit: {currentQuiz.title}</h1>
-
-
-
-            </FormProvider>
-        </>
-        
-        )
+  return (
+    <>
+      <h1>Edit: {currentQuiz.title}</h1>
+    </>
+  );
 }
