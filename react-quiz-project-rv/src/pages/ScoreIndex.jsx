@@ -37,8 +37,8 @@ export default function ScoreIndex() {
         <thead>
           <tr>
             <th>#</th>
-            <th>Quiz_id</th>
-            <th>User_id</th>
+            <th>Quiz</th>
+            <th>User</th>
             <th>Score</th>
             <th>Date</th>
           </tr>
@@ -48,10 +48,10 @@ export default function ScoreIndex() {
             return (
               <tr>
                 <td>{scoreItem.id}</td>
-                <td>{scoreItem.quiz_id}</td>
-                <td>{scoreItem.user_id}</td>
+                <td>{scoreItem.title}</td>
+                <td>{scoreItem.name}</td>
                 <td>{scoreItem.score}</td>
-                <td>{new Date(scoreItem.date).toLocaleString()}</td>
+                <td>{new Date(scoreItem.date).toLocaleDateString()}</td>
               </tr>
             );
           })}

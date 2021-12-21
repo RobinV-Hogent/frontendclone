@@ -7,7 +7,9 @@ const LabelInput = ({ label, type, defaultValue, validation, ...rest }) => {
   } = useFormContext();
   return (
     <div className="col-span-6 sm:col-span-3">
-      <label htmlFor={label}>{label}</label>
+      <label className="lbl" htmlFor={label}>
+        {label}
+      </label>
       <input
         {...register(label, validation)}
         defaultValue={defaultValue}

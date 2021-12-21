@@ -6,6 +6,8 @@ import { useQuery, useMutation } from "react-query";
 import { Spinner, Table, Button } from "react-bootstrap";
 import { useSession } from "../contexts/AuthProvider";
 import { useHistory } from "react-router-dom";
+import { BiCog } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 export default function QuizDetails() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -24,8 +26,6 @@ export default function QuizDetails() {
     isError,
   } = useQuery(["quiz", id], () => apiQuizzes.getQuizById(id));
 
-  console.log(currentQuiz);
-
   const { data: userScores } = useQuery(["quizUserScore"], () =>
     apiScores.getScoresByUserId(user?.id)
   );
@@ -36,7 +36,8 @@ export default function QuizDetails() {
   if (isLoading) {
     return (
       <>
-        <Spinner animation="border" variant="primary" /> "Loading"
+        <Spinner animation="border" variant="primary" />
+        Loading
       </>
     );
   }
@@ -71,7 +72,15 @@ export default function QuizDetails() {
 
   return (
     <>
+      {user?.roles.includes("admin") ? (
+        <Link to={`/quiz/edit/${currentQuiz.id}`}>
+          <BiCog className="editbutton" />
+        </Link>
+      ) : (
+        <></>
+      )}
       <img className="banner" src={currentQuiz.img} alt=""></img>
+      <div></div>
       <p className="light">{currentQuiz.id}</p>
       <h1 className="quiz-title">{currentQuiz.title}</h1>
       <p className="quiz-description">{currentQuiz.description}</p>

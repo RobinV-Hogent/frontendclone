@@ -7,8 +7,9 @@ import * as api from "../api/quizzes";
 import Login from "../components/Login";
 
 export default function Quizzes() {
-  const { data, isLoading, isError } = useQuery("quizzes", api.getAllItems);
-  console.log(data);
+  const { data, isLoading, isError } = useQuery("quizzes", api.getAllItems, {
+    refetchOnMount: true,
+  });
 
   if (isLoading) {
     return (

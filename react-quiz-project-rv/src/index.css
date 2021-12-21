@@ -172,6 +172,30 @@ select {
   color: black;
 }
 
+.lbl {
+  width: 200px;
+}
+
+.editbutton {
+  position: fixed;
+  right: 10px;
+  bottom: 20px;
+  font-size: 1.5rem;
+  background-color: rgb(240, 240, 240);
+  width: 50px;
+  height: 50px;
+  padding: 15px;
+  color: gray;
+  border-radius: 100%;
+  transition: color 0.2s ease-out;
+  transition: transform 1s ease-out;
+}
+
+.editbutton:hover {
+  color: royalblue;
+  transform: rotate(180deg);
+}
+
 .info-button {
   background-color: white;
   border: 1px solid black;

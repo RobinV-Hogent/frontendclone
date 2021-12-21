@@ -1,7 +1,6 @@
-import { Table } from "react-bootstrap";
-import { CATEGORY_DATA as data } from "../../data/mock-data";
 import { useSession } from "../../contexts/AuthProvider";
 import { useHistory } from "react-router-dom";
+import CategoryTable from "../../components/CategoryTable";
 
 export default function CategoryIndex() {
   const { user } = useSession();
@@ -16,24 +15,7 @@ export default function CategoryIndex() {
     <>
       <h1>Categories</h1>
 
-      <Table responsive>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Name</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((catItem) => {
-            return (
-              <tr key={catItem.cat_id}>
-                <td>{catItem.id}</td>
-                <td>{catItem.cat_name}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </Table>
+      <CategoryTable />
     </>
   );
 }

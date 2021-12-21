@@ -40,3 +40,17 @@ export const getQuizByName = async (name) => {
     console.log(data);
     return data;
 }
+
+export const updateQuizById = async (id, {
+    title,
+    description,
+    img,
+    category
+}) => {
+    await axios.put(`quizzes/quiz/${id}`, {
+        title,
+        description,
+        img,
+        category
+    });
+}

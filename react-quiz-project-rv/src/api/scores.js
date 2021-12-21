@@ -5,7 +5,8 @@ import {
 
 
 export const getAllItems = async () => {
-    const data = await axios.get(`scores`).then(res => res.data);
+    const data = await axios.get(`scores`).then(res => res.data.data);
+    console.log(data)
     return data;
 }
 
@@ -35,7 +36,6 @@ export const getScoreById = async (id) => {
 export const getScoresByUserId = async (id) => {
     const {
         data
-    } = await axios.get(`scores/user/id/${id}`);
-    console.log(data);
+    } = await axios.get(`scores/user/id/${id}`).then(res => res.data);
     return data;
 }
