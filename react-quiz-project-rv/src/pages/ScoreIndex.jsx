@@ -1,10 +1,11 @@
 import { Table, Offcanvas } from "react-bootstrap";
 import * as apiScores from "../api/scores";
-import { useQuery } from "react-query";
+import { useQuery, useMutation } from "react-query";
 import { CATEGORY_DATA as categories } from "../data/mock-data";
 import { useSession } from "../contexts/AuthProvider";
 import { useHistory } from "react-router-dom";
 import Quizzes from "./Quizzes";
+import { RiDeleteBinLine } from "react-icons/ri";
 
 export default function ScoreIndex() {
   const {
@@ -14,6 +15,8 @@ export default function ScoreIndex() {
   } = useQuery("scoreIndex", apiScores.getAllItems);
 
   const { user } = useSession();
+
+  const { mutate: deleteScore } = useMutation(apiScores.deleteScoreById);
 
   const history = useHistory();
 
@@ -29,6 +32,11 @@ export default function ScoreIndex() {
     return "Error: Something went wrong try again later.";
   }
 
+  const handleOnDeleteScore = ({ id }) => {
+    deleteScore({ id: id });
+    history.replace("/");
+  };
+
   return (
     <>
       <h1>Scores</h1>
@@ -41,6 +49,7 @@ export default function ScoreIndex() {
             <th>User</th>
             <th>Score</th>
             <th>Date</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -48,10 +57,19 @@ export default function ScoreIndex() {
             return (
               <tr>
                 <td>{scoreItem.id}</td>
-                <td>{scoreItem.title}</td>
-                <td>{scoreItem.name}</td>
-                <td>{scoreItem.score}</td>
-                <td>{new Date(scoreItem.date).toLocaleDateString()}</td>
+                <td data-cy="scoreIndexTitle">{scoreItem.title}</td>
+                <td data-cy="scoreIndexName">{scoreItem.name}</td>
+                <td data-cy="scoreIndexScore">{scoreItem.score}</td>
+                <td data-cy="scoreIndexDate">
+                  {new Date(scoreItem.date).toLocaleDateString()}
+                </td>
+                <td>
+                  <RiDeleteBinLine
+                    data-cy="scoreIndexDelete"
+                    className="error-text"
+                    onClick={() => handleOnDeleteScore({ id: scoreItem.id })}
+                  />
+                </td>
               </tr>
             );
           })}

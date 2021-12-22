@@ -94,18 +94,31 @@ export default function QuizDetails() {
     <>
       {user?.roles.includes("admin") ? (
         <div className="actionButtons">
-          <Link to={`/quiz/edit/${currentQuiz.id}`}>
+          <Link data-cy="quizDetailsEdit" to={`/quiz/edit/${currentQuiz.id}`}>
             <BiCog className="editbutton" />
           </Link>
-          <RiDeleteBinLine className="removebutton" onClick={deleteQuiz} />
+          <RiDeleteBinLine
+            data-cy="quizDetailsRemove"
+            className="removebutton"
+            onClick={deleteQuiz}
+          />
         </div>
       ) : (
         <></>
       )}
-      <img className="banner" src={currentQuiz.img} alt="Not Available"></img>
+      <img
+        className="banner"
+        src={currentQuiz.img}
+        alt="Not Available"
+        data-cy="quizDetailsImg"
+      ></img>
       <p className="light">{currentQuiz.id}</p>
-      <h1 className="quiz-title">{currentQuiz.title}</h1>
-      <p className="quiz-description">{currentQuiz.description}</p>
+      <h1 className="quiz-title" data-cy="quizDetailsTitle">
+        {currentQuiz.title}
+      </h1>
+      <p className="quiz-description" data-cy="quizDetailsDescription">
+        {currentQuiz.description}
+      </p>
 
       {showScore ? (
         <div className="question-all">
@@ -114,6 +127,7 @@ export default function QuizDetails() {
           </div>
           <div className="score-section">
             <button
+              data-cy="quizDetailsSubmitScore"
               className="shadowBox noborder m-2"
               onClick={handleOnSaveScore}
             >
@@ -141,6 +155,7 @@ export default function QuizDetails() {
                 </div>
                 <div className="answer-section">
                   <button
+                    data-cy="quizDetailsAnswer1"
                     className="shadowBox noborder m-2"
                     onClick={() =>
                       handleAnswerOptionClick(
@@ -153,6 +168,7 @@ export default function QuizDetails() {
                   </button>
 
                   <button
+                    data-cy="quizDetailsAnswer2"
                     className="shadowBox noborder m-2"
                     onClick={() =>
                       handleAnswerOptionClick(
@@ -165,6 +181,7 @@ export default function QuizDetails() {
                   </button>
 
                   <button
+                    data-cy="quizDetailsAnswer3"
                     className="shadowBox noborder m-2"
                     onClick={() =>
                       handleAnswerOptionClick(
@@ -182,7 +199,7 @@ export default function QuizDetails() {
 
           <div className="scores">
             <h2>Your scores</h2>
-
+            {console.log(userScores)}
             {userScores?.length === 0 ? (
               <p>No scores yet for this quiz.</p>
             ) : (
@@ -214,6 +231,7 @@ export default function QuizDetails() {
                                 </td>
                                 <td>
                                   <RiDeleteBinLine
+                                    cy-data="quizDetailsDelete"
                                     className="error-text"
                                     onClick={() =>
                                       handleOnDeleteScore({ id: scoreItem.id })

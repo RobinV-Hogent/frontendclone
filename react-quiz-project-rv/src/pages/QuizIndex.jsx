@@ -75,7 +75,7 @@ export default function QuizIndex() {
             })}
           </ul>
           <br />
-          <Link to={`/quiz/edit/${selectedQuiz.id}`}>
+          <Link data-cy="quizIndexEdit" to={`/quiz/edit/${selectedQuiz.id}`}>
             <BiCog className="editbutton" />
           </Link>
         </Offcanvas.Body>
@@ -91,10 +91,11 @@ export default function QuizIndex() {
         <tr
           onClick={() => handleOnClick(quizItem)}
           className="pointer changeRed"
+          data-cy="quizListItem"
         >
-          <td>{quizItem.id}</td>
-          <td>{quizItem.title}</td>
-          <td>
+          <td data-cy="quizListItemId">{quizItem.id}</td>
+          <td data-cy="quizListItemTitle">{quizItem.title}</td>
+          <td data-cy="quizListItemCategory">
             {
               categories.filter((cat) => cat.id === quizItem.category)[0]
                 .cat_name

@@ -31,7 +31,7 @@ export default function QuizNav() {
                       Category List
                     </NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="/score/list">
+                    <NavDropdown.Item href="/score/list" data-cy="navScoreList">
                       Score List
                     </NavDropdown.Item>
                   </NavDropdown>
@@ -41,7 +41,10 @@ export default function QuizNav() {
             <Nav>
               {isAuthed ? (
                 <>
-                  <Nav.Link href={`/userdata/${user?.id}`}>
+                  <Nav.Link
+                    href={`/userdata/${user?.id}`}
+                    data-cy="quizNavUsername"
+                  >
                     {user?.name}
                   </Nav.Link>
 

@@ -42,19 +42,26 @@ export default function Login() {
         <LabelInput
           label="email"
           type="text"
-          defaultValue="robin@mail.com"
+          defaultValue=""
           placeholder="your@email.com"
           validation={validationRules.email}
+          data-cy="emailInput"
         />
         <LabelInput
           label="password"
           type="password"
-          defaultValue="12345678"
+          defaultValue=""
           placeholder="password"
           validation={validationRules.password}
+          data-cy="passwordInput"
         />
 
-        <Button variant="primary" type="submit" disabled={loading}>
+        <Button
+          variant="primary"
+          type="submit"
+          disabled={loading}
+          data-cy="loginButton"
+        >
           Sign in
         </Button>
         <Button variant="danger" className="m-1" onClick={handleCancel}>
