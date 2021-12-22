@@ -1,6 +1,7 @@
 import QuizList from "../components/QuizList";
 import { CATEGORY_DATA } from "../data/mock-data";
 import { Button, ButtonGroup, Spinner } from "react-bootstrap";
+import { BiError } from "react-icons/bi";
 
 import { useQuery } from "react-query";
 import * as api from "../api/quizzes";
@@ -14,20 +15,25 @@ export default function Quizzes() {
   if (isLoading) {
     return (
       <>
-        <Spinner animation="border" variant="primary" /> "Loading";
+        <Spinner animation="border" variant="primary" /> Loading
       </>
     );
   }
 
   if (isError) {
-    return "Error: Something went wrong try again later.";
+    return (
+      <>
+        <p>"Error: Something went wrong try again later."</p>
+        <BiError className="error-img" />
+      </>
+    );
   }
 
   return (
     <>
       <br />
 
-      <ButtonGroup aria-label="Basic example">
+      {/* <ButtonGroup aria-label="Basic example">
         {CATEGORY_DATA.map((cat) => {
           return (
             <Button
@@ -40,14 +46,11 @@ export default function Quizzes() {
             </Button>
           );
         })}
-      </ButtonGroup>
-
-      <br />
-      <br />
+      </ButtonGroup> */}
 
       {CATEGORY_DATA.map((cat) => {
         return (
-          <div key={cat.id}>
+          <div className="quiz-slider" key={cat.id}>
             <h1 id={cat.cat_name}>{cat.cat_name}</h1>
             <div className="quiz-list">
               <QuizList cat={cat.id} quizzes={data.quizzes} />

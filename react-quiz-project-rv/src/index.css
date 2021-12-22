@@ -1,5 +1,5 @@
 html {
-  --theme-color: royalblue;
+  --theme-color: rgb(65, 105, 225);
   --h-back: white;
   scroll-behavior: smooth;
 }
@@ -26,15 +26,21 @@ main {
   height: 500px;
   object-fit: cover;
   border-radius: 10px;
+  margin-top: -50px;
 }
 
 .light {
   color: lightgray;
 }
 
+.error-img {
+  font-size: 5rem;
+}
+
 .quiz-item {
   color: white;
-  border: 1px solid lightgray;
+  /* border: 1px solid lightgray; */
+  border-radius: 10px;
   margin: 20px;
   min-width: 300px;
   max-width: 300px;
@@ -42,11 +48,19 @@ main {
   overflow: hidden;
   background-image: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.5) 50%,
-    rgba(18, 31, 216, 0.274)
+    rgba(121, 239, 255, 0.192) 50%,
+    rgba(250, 250, 250, 0.575)
   );
+  box-shadow: 0 0 20px rgb(211, 211, 211);
 
   transition: transform 0.1s ease-out;
+}
+
+.quiz-slider {
+  box-shadow: 0 0 20px rgb(211, 211, 211);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 50px;
 }
 
 .quiz-item:hover {
@@ -59,13 +73,15 @@ h3,
 h4,
 h5 {
   text-transform: uppercase;
-  color: var(--theme-color);
+  /* color: var(--theme-color); */
+  color: rgb(147, 170, 240);
   /*    text-shadow: 0 0 5px black;*/
-  background-color: var(--h-back);
+  /* background-color: var(--h-back); */
   display: inline-block;
   padding: 10px;
   transform: skew(-10deg);
-  border: 1px solid black;
+  text-shadow: 0 0 20px rgba(148, 148, 148, 0.568);
+  /* border: 1px solid black; */
 }
 
 .card-content {
@@ -89,7 +105,7 @@ h5 {
   display: flex;
   font-size: 1.1rem;
   height: 100%;
-  background-color: rgba(39, 39, 39, 0.787);
+  background-color: rgba(255, 255, 255, 0.787);
   flex-direction: column;
   padding: 20px;
   text-align: center;
@@ -176,12 +192,32 @@ select {
   width: 200px;
 }
 
-.editbutton {
+.actionButtons {
   position: fixed;
-  right: 10px;
+  right: 20px;
   bottom: 20px;
+}
+
+.removebutton {
+  color: white;
   font-size: 1.5rem;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(146, 0, 0);
+  width: 50px;
+  height: 50px;
+  padding: 15px;
+  border-radius: 100%;
+  transition: color 0.2s ease-out;
+  cursor: pointer;
+}
+
+.removebutton:hover {
+  color: rgb(218, 137, 137);
+}
+
+.editbutton {
+  margin-right: 10px;
+  font-size: 1.5rem;
+  background-color: rgb(224, 224, 224);
   width: 50px;
   height: 50px;
   padding: 15px;
@@ -215,12 +251,28 @@ select {
   box-shadow: none;
 }
 
-.question-all {
+.question-all,
+.shadowBox {
   margin: 50px 0;
   background-color: white;
-  box-shadow: 0 0 3px black;
+  box-shadow: 0 0 20px rgb(211, 211, 211);
   padding: 10px;
   border-radius: 10px;
+}
+
+.noborder {
+  border: none;
+}
+
+.shadowBoxNav {
+  color: red;
+  box-shadow: 0 0 20px rgb(211, 211, 211);
+  background-color: white;
+  margin: 10px 20px;
+  border-radius: 10px;
+  width: 70%;
+  margin: 10px auto;
+  padding: 10px;
 }
 
 .question-number {
@@ -241,6 +293,16 @@ select {
   font-weight: bold;
 }
 
+.fit-content {
+  width: fit-content;
+}
+
+.sbutton {
+  padding: 10px;
+  box-shadow: 0 0 10px rgb(173, 173, 173);
+  border-radius: 10px;
+}
+
 .scores {
   margin-bottom: 100px;
 }
@@ -257,10 +319,11 @@ select {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: rgb(147, 170, 240);
+  border-radius: 5px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: rgba(147, 170, 240, 0.87);
 }

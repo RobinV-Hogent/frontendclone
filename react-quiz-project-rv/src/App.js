@@ -14,6 +14,7 @@ import Register from "./components/Register";
 import PrivateRoute from "./components/PrivateRoute";
 import ScoreIndex from "./pages/ScoreIndex";
 import QuizEdit from "./pages/QuizEdit";
+import UserComponent from "./components/UserComponent";
 
 function App() {
   return (
@@ -57,6 +58,10 @@ function App() {
 
               <PrivateRoute path="/quiz/edit/:id" exact>
                 <QuizEdit />
+              </PrivateRoute>
+
+              <PrivateRoute path="/userdata/:id" exact>
+                <UserComponent />
               </PrivateRoute>
             </Switch>
           </Router>

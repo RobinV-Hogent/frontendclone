@@ -8,7 +8,7 @@ const QuizItem = ({ id, img, title, description, category }) => {
         <div className="card-title">{title}</div>
         <div className="card-description">
           <Link to={`/quizzes/detail/${id}`}>
-            <button className="info-button">info</button>
+            <button className="sbutton noborder">Play Quiz</button>
           </Link>
         </div>
       </div>

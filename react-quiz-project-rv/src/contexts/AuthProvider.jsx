@@ -31,7 +31,7 @@ function parseExp(exp) {
 const useAuth = () => useContext(AuthContext);
 
 export const useSession = () => {
-  const { loading, error, token, user, ready, hasRole } = useAuth();
+  const { loading, error, token, user, ready } = useAuth();
   return {
     loading,
     error,
@@ -39,7 +39,6 @@ export const useSession = () => {
     user,
     ready,
     isAuthed: Boolean(token),
-    hasRole,
   };
 };
 

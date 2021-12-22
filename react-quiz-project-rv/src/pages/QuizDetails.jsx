@@ -7,6 +7,7 @@ import { Spinner, Table, Button } from "react-bootstrap";
 import { useSession } from "../contexts/AuthProvider";
 import { useHistory } from "react-router-dom";
 import { BiCog } from "react-icons/bi";
+import { RiDeleteBinLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 export default function QuizDetails() {
@@ -24,10 +25,16 @@ export default function QuizDetails() {
     data: currentQuiz,
     isLoading,
     isError,
-  } = useQuery(["quiz", id], () => apiQuizzes.getQuizById(id));
+  } = useQuery(["quiz", id], () => apiQuizzes.getQuizById(id), {
+    refetchOnMount: true,
+  });
 
-  const { data: userScores } = useQuery(["quizUserScore"], () =>
-    apiScores.getScoresByUserId(user?.id)
+  const { data: userScores } = useQuery(
+    ["quizUserScore"],
+    () => apiScores.getScoresByUserId(user?.id),
+    {
+      refetchOnMount: true,
+    }
   );
 
   const { mutate: createScore } = useMutation(apiScores.createScore);
@@ -47,13 +54,26 @@ export default function QuizDetails() {
   }
 
   const handleOnDeleteScore = ({ id }) => {
-    console.log("deleting ...");
     deleteScore({ id: id });
     history.replace("/");
   };
 
   const handleOnSaveScore = (event) => {
     createScore({ quiz: currentQuiz.id, user: user.id, score: score });
+    history.replace("/");
+  };
+
+  const deleteQuiz = async () => {
+    const qtitle = prompt(
+      "Are you sure you want to delete this quiz?\nType the title of the quiz in the textbox in order to delete the quiz."
+    );
+    if (
+      Boolean(qtitle) &&
+      qtitle.toLowerCase() === currentQuiz?.title.toLowerCase()
+    ) {
+      await apiQuizzes.deleteQuiz(currentQuiz?.id);
+    }
+
     history.replace("/");
   };
 
@@ -73,25 +93,30 @@ export default function QuizDetails() {
   return (
     <>
       {user?.roles.includes("admin") ? (
-        <Link to={`/quiz/edit/${currentQuiz.id}`}>
-          <BiCog className="editbutton" />
-        </Link>
+        <div className="actionButtons">
+          <Link to={`/quiz/edit/${currentQuiz.id}`}>
+            <BiCog className="editbutton" />
+          </Link>
+          <RiDeleteBinLine className="removebutton" onClick={deleteQuiz} />
+        </div>
       ) : (
         <></>
       )}
-      <img className="banner" src={currentQuiz.img} alt=""></img>
-      <div></div>
+      <img className="banner" src={currentQuiz.img} alt="Not Available"></img>
       <p className="light">{currentQuiz.id}</p>
       <h1 className="quiz-title">{currentQuiz.title}</h1>
       <p className="quiz-description">{currentQuiz.description}</p>
 
       {showScore ? (
         <div className="question-all">
-          <div className="quiz-end">Quiz has ended</div>
+          <div className="quiz-end">
+            Quiz has ended: {score} / {currentQuiz.questions.length}
+          </div>
           <div className="score-section">
-            You scored {score} out of {currentQuiz.questions.length}
-            <br />
-            <button className="info-button" onClick={handleOnSaveScore}>
+            <button
+              className="shadowBox noborder m-2"
+              onClick={handleOnSaveScore}
+            >
               Save Score
             </button>
           </div>
@@ -116,7 +141,7 @@ export default function QuizDetails() {
                 </div>
                 <div className="answer-section">
                   <button
-                    className="info-button m-2"
+                    className="shadowBox noborder m-2"
                     onClick={() =>
                       handleAnswerOptionClick(
                         currentQuiz.questions[currentQuestion].answer1 ===
@@ -128,7 +153,7 @@ export default function QuizDetails() {
                   </button>
 
                   <button
-                    className="info-button m-2"
+                    className="shadowBox noborder m-2"
                     onClick={() =>
                       handleAnswerOptionClick(
                         currentQuiz.questions[currentQuestion].answer2 ===
@@ -140,7 +165,7 @@ export default function QuizDetails() {
                   </button>
 
                   <button
-                    className="info-button m-2"
+                    className="shadowBox noborder m-2"
                     onClick={() =>
                       handleAnswerOptionClick(
                         currentQuiz.questions[currentQuestion].answer3 ===
@@ -161,7 +186,7 @@ export default function QuizDetails() {
             {userScores?.length === 0 ? (
               <p>No scores yet for this quiz.</p>
             ) : (
-              <>
+              <div className="shadowBox">
                 <Table responsive>
                   <thead>
                     <tr>
@@ -171,29 +196,41 @@ export default function QuizDetails() {
                       <th>Delete</th>
                     </tr>
                   </thead>
+                  {/* // ?.find((s) => s?.quiz_id === currentQuiz?.id) */}
                   <tbody>
                     {userScores?.map((scoreItem) => {
                       return (
-                        <tr key={scoreItem.id}>
-                          <td>{scoreItem.id}</td>
-                          <td>
-                            {scoreItem.score}/{currentQuiz.questions.length}
-                          </td>
-                          <td>{new Date(scoreItem.date).toLocaleString()}</td>
-                          <button
-                            className="info-button"
-                            onClick={() =>
-                              handleOnDeleteScore({ id: scoreItem.id })
-                            }
-                          >
-                            Remove
-                          </button>
-                        </tr>
+                        <>
+                          {scoreItem?.quiz_id === currentQuiz?.id ? (
+                            <>
+                              <tr key={scoreItem.id}>
+                                <td>{scoreItem.id}</td>
+                                <td>
+                                  {scoreItem.score}/
+                                  {currentQuiz.questions.length}
+                                </td>
+                                <td>
+                                  {new Date(scoreItem.date).toLocaleString()}
+                                </td>
+                                <button
+                                  className="info-button"
+                                  onClick={() =>
+                                    handleOnDeleteScore({ id: scoreItem.id })
+                                  }
+                                >
+                                  Remove
+                                </button>
+                              </tr>
+                            </>
+                          ) : (
+                            <></>
+                          )}
+                        </>
                       );
                     })}
                   </tbody>
                 </Table>
-              </>
+              </div>
             )}
           </div>
         </>

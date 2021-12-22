@@ -6,6 +6,7 @@ import { CATEGORY_DATA as categories } from "../data/mock-data";
 import { useState } from "react";
 import { useSession } from "../contexts/AuthProvider";
 import { useHistory } from "react-router-dom";
+import { BiCog } from "react-icons/bi";
 
 export default function QuizIndex() {
   const [show, setShow] = useState(false);
@@ -40,22 +41,24 @@ export default function QuizIndex() {
     <>
       <h1>Quizzes</h1>
 
-      <Table responsive>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Title</th>
-            <th>Category</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.quizzes.map((quizItem) => {
-            return <QuizListItem key={quizItem.id} item={quizItem} />;
-          })}
-        </tbody>
-      </Table>
+      <div className="shadowBox">
+        <Table responsive>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Title</th>
+              <th>Category</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.quizzes.map((quizItem) => {
+              return <QuizListItem key={quizItem.id} item={quizItem} />;
+            })}
+          </tbody>
+        </Table>
+      </div>
 
-      <Offcanvas show={show} onHide={handleClose}>
+      <Offcanvas className="shadowBox m-5" show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>{selectedQuiz?.title}</Offcanvas.Title>
         </Offcanvas.Header>
@@ -71,6 +74,10 @@ export default function QuizIndex() {
               return <li key={q.id}>{q.question}</li>;
             })}
           </ul>
+          <br />
+          <Link to={`/quiz/edit/${selectedQuiz.id}`}>
+            <BiCog className="editbutton" />
+          </Link>
         </Offcanvas.Body>
       </Offcanvas>
     </>
