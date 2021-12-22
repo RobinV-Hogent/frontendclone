@@ -212,14 +212,14 @@ export default function QuizDetails() {
                                 <td>
                                   {new Date(scoreItem.date).toLocaleString()}
                                 </td>
-                                <button
-                                  className="info-button"
-                                  onClick={() =>
-                                    handleOnDeleteScore({ id: scoreItem.id })
-                                  }
-                                >
-                                  Remove
-                                </button>
+                                <td>
+                                  <RiDeleteBinLine
+                                    className="error-text"
+                                    onClick={() =>
+                                      handleOnDeleteScore({ id: scoreItem.id })
+                                    }
+                                  />
+                                </td>
                               </tr>
                             </>
                           ) : (
