@@ -24,6 +24,7 @@ export const register = async ({
         email,
         password
     });
+
     return data;
 };
 

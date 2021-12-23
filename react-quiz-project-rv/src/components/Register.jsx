@@ -18,9 +18,28 @@ export default function Login() {
 
   const validationRules = useMemo(
     () => ({
-      email: { required: true },
-      name: { required: true },
-      password: { required: true },
+      email: {
+        required: "Email is required",
+        pattern: {
+          value:
+            /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+          message: "This email is not valid",
+        },
+      },
+      name: {
+        required: "Name is required",
+        minLength: {
+          value: 3,
+          message: "Name should be at least 3 characters long",
+        },
+      },
+      password: {
+        required: true,
+        minLength: {
+          value: 5,
+          message: "Password should be at least 5 characters long",
+        },
+      },
       confirmPassword: {
         required: true,
         validate: {
@@ -55,7 +74,7 @@ export default function Login() {
 
   return (
     <FormProvider {...methods}>
-      <h1>Sign in</h1>
+      <h1>Register</h1>
       <form onSubmit={handleSubmit(handleRegister)}>
         <LabelInput
           label="email"

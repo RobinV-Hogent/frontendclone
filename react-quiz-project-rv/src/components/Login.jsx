@@ -34,40 +34,42 @@ export default function Login() {
   );
 
   return (
-    <FormProvider {...methods}>
-      <h1>Sign in</h1>
-      <form onSubmit={handleSubmit(handleLogin)}>
-        {error ? <p className="error-text">{error}</p> : <p></p>}
+    <div>
+      <FormProvider {...methods}>
+        <h1>Sign in</h1>
+        <form onSubmit={handleSubmit(handleLogin)}>
+          {error ? <p className="error-text">{error}</p> : <p></p>}
 
-        <LabelInput
-          label="email"
-          type="text"
-          defaultValue=""
-          placeholder="your@email.com"
-          validation={validationRules.email}
-          data-cy="emailInput"
-        />
-        <LabelInput
-          label="password"
-          type="password"
-          defaultValue=""
-          placeholder="password"
-          validation={validationRules.password}
-          data-cy="passwordInput"
-        />
+          <LabelInput
+            label="email"
+            type="text"
+            defaultValue=""
+            placeholder="your@email.com"
+            validation={validationRules.email}
+            data-cy="emailInput"
+          />
+          <LabelInput
+            label="password"
+            type="password"
+            defaultValue=""
+            placeholder="password"
+            validation={validationRules.password}
+            data-cy="passwordInput"
+          />
 
-        <Button
-          variant="primary"
-          type="submit"
-          disabled={loading}
-          data-cy="loginButton"
-        >
-          Sign in
-        </Button>
-        <Button variant="danger" className="m-1" onClick={handleCancel}>
-          Cancel
-        </Button>
-      </form>
-    </FormProvider>
+          <Button
+            variant="primary"
+            type="submit"
+            disabled={loading}
+            data-cy="loginButton"
+          >
+            Sign in
+          </Button>
+          <Button variant="danger" className="m-1" onClick={handleCancel}>
+            Cancel
+          </Button>
+        </form>
+      </FormProvider>
+    </div>
   );
 }

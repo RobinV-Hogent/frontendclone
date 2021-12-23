@@ -1,6 +1,5 @@
-import { useForm, useFormContext } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 
-const alertWarn = (msg) => alert({ message: msg, type: "warning" });
 const LabelInput = ({
   label,
   type,
@@ -15,7 +14,7 @@ const LabelInput = ({
   } = useFormContext();
   return (
     <>
-      <div className="col-span-6 sm:col-span-3">
+      <div>
         <label className="lbl" htmlFor={label}>
           {label}
         </label>
