@@ -2,6 +2,7 @@
   "name": "quiz",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://RobinV-Hogent.github.io/frontendweb-karine-2122-RobinV-Hogent/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
