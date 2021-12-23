@@ -24,11 +24,7 @@ function App() {
         <div className="App">
           <Router>
             <Switch>
-              <Route
-                Route
-                path="frontendweb-karine-2122-RobinV-Hogent/login"
-                exact
-              >
+              <Route path="/login" exact>
                 <Login />
               </Route>
 
