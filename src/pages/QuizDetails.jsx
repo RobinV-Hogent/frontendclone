@@ -126,7 +126,7 @@ export default function QuizDetails() {
                 <li>Description: {currentQuiz.description}</li>
                 <li>Img: {currentQuiz.img}</li>
                 <li>
-                  Category:{" "}
+                  Category:{""}
                   {
                     CATEGORY_DATA.filter(
                       (e) => e.id === currentQuiz.category
