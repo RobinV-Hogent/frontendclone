@@ -14,7 +14,7 @@ ReactDOM.render(
     <AuthProvider>
       <QueryClientProvider client={queryClient}>
         <App />
-        <ReactQueryDevtools />
+        {/* <ReactQueryDevtools /> */}
       </QueryClientProvider>
     </AuthProvider>
   </React.StrictMode>,
