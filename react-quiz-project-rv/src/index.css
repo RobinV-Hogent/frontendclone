@@ -33,6 +33,12 @@ main {
   margin-top: -50px;
 }
 
+.validationmsg {
+  color: gray;
+  font-style: italic;
+  word-break: break-all;
+}
+
 .light {
   color: lightgray;
 }
@@ -194,6 +200,8 @@ select {
 
 .lbl {
   width: 200px;
+  font-weight: bold;
+  text-transform: capitalize;
 }
 
 .actionButtons {
@@ -298,7 +306,7 @@ select {
 }
 
 .fit-content {
-  width: fit-content;
+  max-width: 500px;
 }
 
 .sbutton {

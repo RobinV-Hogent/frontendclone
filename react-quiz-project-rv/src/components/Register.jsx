@@ -69,7 +69,7 @@ export default function Login() {
           type="text"
           defaultValue=""
           placeholder="name"
-          validation={validationRules.email}
+          validation={validationRules.name}
         />
 
         <LabelInput

@@ -3,17 +3,23 @@ import { useParams } from "react-router-dom";
 import * as apiQuizzes from "../api/quizzes";
 import * as apiScores from "../api/scores";
 import { useQuery, useMutation } from "react-query";
-import { Spinner, Table, Button } from "react-bootstrap";
+import { Spinner, Table, Button, Modal } from "react-bootstrap";
 import { useSession } from "../contexts/AuthProvider";
 import { useHistory } from "react-router-dom";
 import { BiCog } from "react-icons/bi";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { CATEGORY_DATA } from "../data/mock-data";
 
 export default function QuizDetails() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
+
+  // MODAL
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const history = useHistory();
 
@@ -64,16 +70,19 @@ export default function QuizDetails() {
   };
 
   const deleteQuiz = async () => {
-    const qtitle = prompt(
-      "Are you sure you want to delete this quiz?\nType the title of the quiz in the textbox in order to delete the quiz."
-    );
-    if (
-      Boolean(qtitle) &&
-      qtitle.toLowerCase() === currentQuiz?.title.toLowerCase()
-    ) {
-      await apiQuizzes.deleteQuiz(currentQuiz?.id);
-    }
+    setShow(true);
 
+    // const qtitle = prompt(
+    //   "Are you sure you want to delete this quiz?\nType the title of the quiz in the textbox in order to delete the quiz."
+    // );
+    // if (
+    //   Boolean(qtitle) &&
+    //   qtitle.toLowerCase() === currentQuiz?.title.toLowerCase()
+    // ) {
+  };
+
+  const handleModalDelete = async () => {
+    await apiQuizzes.deleteQuiz(currentQuiz?.id);
     history.replace("/");
   };
 
@@ -93,16 +102,49 @@ export default function QuizDetails() {
   return (
     <>
       {user?.roles.includes("admin") ? (
-        <div className="actionButtons">
-          <Link data-cy="quizDetailsEdit" to={`/quiz/edit/${currentQuiz.id}`}>
-            <BiCog className="editbutton" />
-          </Link>
-          <RiDeleteBinLine
-            data-cy="quizDetailsRemove"
-            className="removebutton"
-            onClick={deleteQuiz}
-          />
-        </div>
+        <>
+          <div className="actionButtons">
+            <Link data-cy="quizDetailsEdit" to={`/quiz/edit/${currentQuiz.id}`}>
+              <BiCog className="editbutton" />
+            </Link>
+            <RiDeleteBinLine
+              data-cy="quizDetailsRemove"
+              className="removebutton"
+              onClick={deleteQuiz}
+            />
+          </div>
+
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>
+                Are you sure you want to delete this quiz
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <ul>
+                <li>Title: {currentQuiz.title}</li>
+                <li>Description: {currentQuiz.description}</li>
+                <li>Img: {currentQuiz.img}</li>
+                <li>
+                  Category:{" "}
+                  {
+                    CATEGORY_DATA.filter(
+                      (e) => e.id === currentQuiz.category
+                    )[0].cat_name
+                  }
+                </li>
+              </ul>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="light" onClick={handleClose}>
+                Close
+              </Button>
+              <Button variant="danger" onClick={handleModalDelete}>
+                Delete Quiz
+              </Button>
+            </Modal.Footer>
+          </Modal>
+        </>
       ) : (
         <></>
       )}

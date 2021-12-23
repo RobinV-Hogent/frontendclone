@@ -6,8 +6,8 @@ import { useLogin, useSession } from "../contexts/AuthProvider";
 import { useHistory } from "react-router-dom";
 
 const validationRules = {
-  email: { required: true },
-  password: { required: true },
+  email: { required: "Both fields must be filled in" },
+  password: { required: "Both fields must be filled in" },
 };
 
 export default function Login() {

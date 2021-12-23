@@ -41,40 +41,42 @@ export default function ScoreIndex() {
     <>
       <h1>Scores</h1>
 
-      <Table responsive>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Quiz</th>
-            <th>User</th>
-            <th>Score</th>
-            <th>Date</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          {sdata.map((scoreItem) => {
-            return (
-              <tr>
-                <td>{scoreItem.id}</td>
-                <td data-cy="scoreIndexTitle">{scoreItem.title}</td>
-                <td data-cy="scoreIndexName">{scoreItem.name}</td>
-                <td data-cy="scoreIndexScore">{scoreItem.score}</td>
-                <td data-cy="scoreIndexDate">
-                  {new Date(scoreItem.date).toLocaleDateString()}
-                </td>
-                <td>
-                  <RiDeleteBinLine
-                    data-cy="scoreIndexDelete"
-                    className="error-text"
-                    onClick={() => handleOnDeleteScore({ id: scoreItem.id })}
-                  />
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </Table>
+      <div className="shadowBox">
+        <Table responsive>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Quiz</th>
+              <th>User</th>
+              <th>Score</th>
+              <th>Date</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sdata.map((scoreItem) => {
+              return (
+                <tr>
+                  <td>{scoreItem.id}</td>
+                  <td data-cy="scoreIndexTitle">{scoreItem.title}</td>
+                  <td data-cy="scoreIndexName">{scoreItem.name}</td>
+                  <td data-cy="scoreIndexScore">{scoreItem.score}</td>
+                  <td data-cy="scoreIndexDate">
+                    {new Date(scoreItem.date).toLocaleDateString()}
+                  </td>
+                  <td>
+                    <RiDeleteBinLine
+                      data-cy="scoreIndexDelete"
+                      className="error-text"
+                      onClick={() => handleOnDeleteScore({ id: scoreItem.id })}
+                    />
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </Table>
+      </div>
     </>
   );
 
