@@ -2,7 +2,7 @@
   "name": "robin-quizzes",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://robinv-hogent.github.io/frontendweb-karine-2122-robinv-hogent/",
+  "homepage": "https://RobinV-Hogent.github.io/frontendweb-karine-2122-RobinV-Hogent/",
   "license": "UNLICENSED",
   "devDependencies": {
     "cypress": "^9.2.0"
