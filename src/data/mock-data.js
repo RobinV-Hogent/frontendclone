@@ -30,6 +30,10 @@ const CATEGORY_DATA = [{
         id: 8,
         cat_name: 'Sports'
     },
+    {
+        id: 9,
+        cat_name: 'Christmas Special'
+    },
 ]
 
 export {
