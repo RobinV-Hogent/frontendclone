@@ -36,6 +36,14 @@ function App() {
                 <Redirect to="/quizzes" />
               </PrivateRoute>
 
+              <PrivateRoute
+                PrivateRoute
+                path="/frontendweb-karine-2122-RobinV-Hogent/"
+                exact
+              >
+                <Redirect to="/quizzes" />
+              </PrivateRoute>
+
               <PrivateRoute path="/quizzes" exact>
                 <Quizzes />
               </PrivateRoute>
