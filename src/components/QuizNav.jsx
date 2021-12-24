@@ -19,7 +19,9 @@ export default function QuizNav() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Link to="/">Home</Link>
+              <Link to="/" className="navItem center">
+                Home
+              </Link>
               {user?.roles.includes("admin") ? (
                 <>
                   <NavDropdown title="Lists">
@@ -47,11 +49,19 @@ export default function QuizNav() {
             <Nav>
               {isAuthed ? (
                 <>
-                  <Link to={`/userdata/${user?.id}`} data-cy="quizNavUsername">
+                  <Link
+                    className="navItem"
+                    to={`/userdata/${user?.id}`}
+                    data-cy="quizNavUsername"
+                  >
                     {user?.name}
                   </Link>
 
-                  <Link variant="primary" onClick={handleLogout}>
+                  <Link
+                    className="navItem"
+                    variant="primary"
+                    onClick={handleLogout}
+                  >
                     Sign out
                   </Link>
                 </>

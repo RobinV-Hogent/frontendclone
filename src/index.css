@@ -25,6 +25,11 @@ main {
   margin: 0 auto;
 }
 
+.center {
+  display: flex;
+  align-items: center;
+}
+
 .navItem {
   color: gray;
   text-decoration: none;

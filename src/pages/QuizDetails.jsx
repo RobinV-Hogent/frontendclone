@@ -148,6 +148,7 @@ export default function QuizDetails() {
       ) : (
         <></>
       )}
+
       <img
         className="banner"
         src={currentQuiz.img}
