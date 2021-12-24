@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/frontendweb-karine-2122-RobinV-Hogent/static/css/main.a30571d1.chunk.css",
-    "main.js": "/frontendweb-karine-2122-RobinV-Hogent/static/js/main.6952bbdc.chunk.js",
-    "main.js.map": "/frontendweb-karine-2122-RobinV-Hogent/static/js/main.6952bbdc.chunk.js.map",
+    "main.js": "/frontendweb-karine-2122-RobinV-Hogent/static/js/main.165b7f72.chunk.js",
+    "main.js.map": "/frontendweb-karine-2122-RobinV-Hogent/static/js/main.165b7f72.chunk.js.map",
     "runtime-main.js": "/frontendweb-karine-2122-RobinV-Hogent/static/js/runtime-main.6f57f41f.js",
     "runtime-main.js.map": "/frontendweb-karine-2122-RobinV-Hogent/static/js/runtime-main.6f57f41f.js.map",
     "static/js/2.170cdd36.chunk.js": "/frontendweb-karine-2122-RobinV-Hogent/static/js/2.170cdd36.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.6f57f41f.js",
     "static/js/2.170cdd36.chunk.js",
     "static/css/main.a30571d1.chunk.css",
-    "static/js/main.6952bbdc.chunk.js"
+    "static/js/main.165b7f72.chunk.js"
   ]
 }
