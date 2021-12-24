@@ -1,17 +1,30 @@
 # Robin-Quizzes
 
-## Inloggen
+## Applicatie opstarten
+- Als je het project van GitHub gehaald hebt doe dan eerst een `yarn install` in de terminal zodat alles wat nodig is geïnstalleerd wordt.
+
+- Doe `yarn start` om de applicatie op te starten.
+
+
+## Hoe Cypress testen uitvoeren?
+- Zorg ervoor dat de backend aan staat
+- Zorg ervoor dat je frontend aan staat
+- Open een nieuwe terminal en doe het volgende commando: `yarn run cypress open`
+- Normaal zou er nu een schermpje zijn, scroll naar beneden en klik op 'Testen.spec.js'
+
+## Hoe gebruik je de app?
+### Inloggen
 
 ![inloggen](readmeimg/Inloggen.png)
 
-- Je kan inloggen door een nieuw account aan te maken door op register de klikken in de navbar, dit zal een user account maken
+- Je kan inloggen door een nieuw account aan te maken door op register te klikken in de navbar, dit zal een user account maken
 
 - Als je admin rechten wilt dan logt u in met
     - email: adminAccount@mail.com
     - password: $minad25
 
 
-## Een quiz kiezen
+### Een quiz kiezen
 
 ![](readmeimg/quiz_Kiezen.png)
 
@@ -19,7 +32,7 @@
 - Kies een quiz en druk op 'Play Quiz'.
 
 
-## Een quiz spelen
+### Een quiz spelen
 
 ![](readmeimg/quiz_spelen.png)
 
@@ -30,7 +43,7 @@
 
 
 
-## Score verwijderen
+### Score verwijderen
 
 ![](readmeimg/scores.png)
 
@@ -39,7 +52,7 @@
 - Druk dan op het vuilbakje
 
 
-## Verwijderen van een quiz
+### Verwijderen van een quiz
 
 ![](readmeimg/deletequiz.png)
 ![](readmeimg/deleteknopquiz.png)
@@ -51,7 +64,7 @@
 - De quiz zal verwijderd zijn
 
 
-## Verwijderen van een score van een andere speler
+### Verwijderen van een score van een andere speler
 
 ![](readmeimg/allescores.png)
 
@@ -60,7 +73,7 @@
 - Klik op het vuilbakje van de score dat je wilt verwijderen.
 
 
-## Bekijken van alle categorieen
+### Bekijken van alle categorieen
 
 ![](readmeimg/allecats.png)
 
@@ -68,7 +81,7 @@
 - Klik list -> category list in de navbar.
 
 
-## Bekijken van alle quizzen
+### Bekijken van alle quizzen
 
 ![](readmeimg/allequizzen.png)
 
@@ -76,7 +89,7 @@
 - Klik list -> quiz list in de navbar.
 
 
-## Aanpassen van een quiz
+### Aanpassen van een quiz
 
 ![](readmeimg/deleteknopquiz.png)
 ![](readmeimg/updatequiz.png)
