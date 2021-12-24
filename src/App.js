@@ -19,10 +19,10 @@ import UserComponent from "./components/UserComponent";
 function App() {
   return (
     <>
-      <QuizNav />
-      <main>
-        <div className="App">
-          <Router>
+      <Router>
+        <QuizNav />
+        <main>
+          <div className="App">
             <Switch>
               <Route path="/login" exact>
                 <Login />
@@ -72,9 +72,9 @@ function App() {
                 <UserComponent />
               </PrivateRoute>
             </Switch>
-          </Router>
-        </div>
-      </main>
+          </div>
+        </main>
+      </Router>
     </>
   );
 }
