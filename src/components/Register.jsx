@@ -103,7 +103,7 @@ export default function Login() {
           label="confirmPassword"
           type="password"
           defaultValue=""
-          placeholder="comfirm password"
+          placeholder="confirm password"
           validation={validationRules.confirmPassword}
         />
 
