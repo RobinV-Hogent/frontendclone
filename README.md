@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# Robin-Quizzes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Inloggen
 
-## Available Scripts
+![inloggen](readmeimg/Inloggen.png)
 
-In the project directory, you can run:
+- Je kan inloggen door een nieuw account aan te maken door op register de klikken in de navbar, dit zal een user account maken
 
-### `yarn start`
+- Als je admin rechten wilt dan logt u in met
+    - email: adminAccount@mail.com
+    - password: $minad25
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Een quiz kiezen
 
-### `yarn test`
+![](readmeimg/quiz_Kiezen.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Als je aangemeld bent dan zie je verschillende lijsten met quizzen in.
+- Kies een quiz en druk op 'Play Quiz'.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Een quiz spelen
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![](readmeimg/quiz_spelen.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Antwoord vervolgens op de drie vragen.
+- Klik op het einde van de quiz op 'Save Score'.
 
-### `yarn eject`
+![](readmeimg/eindeQuiz.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Score verwijderen
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![](readmeimg/scores.png)
 
-## Learn More
+- Doe de stappen van 'een quiz kiezen'
+- Scroll dan vervolgens naar onder, daar zie je een lijst van al je scores
+- Druk dan op het vuilbakje
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Verwijderen van een quiz
 
-### Code Splitting
+![](readmeimg/deletequiz.png)
+![](readmeimg/deleteknopquiz.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Je moet aangemeld zijn als admin
+- Doe de stappen van 'een quiz kiezen'
+- Druk op het vuilbakje helemaal rechts vanonder'
+- Klik nog eens 'Delete Quiz'
+- De quiz zal verwijderd zijn
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Verwijderen van een score van een andere speler
 
-### Making a Progressive Web App
+![](readmeimg/allescores.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Je moet aangemeld zijn als admin.
+- Klik list -> scores list in de navbar.
+- Klik op het vuilbakje van de score dat je wilt verwijderen.
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Bekijken van alle categorieen
 
-### Deployment
+![](readmeimg/allecats.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Je moet aangemeld zijn als admin.
+- Klik list -> category list in de navbar.
 
-### `yarn build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Bekijken van alle quizzen
+
+![](readmeimg/allequizzen.png)
+
+- Je moet aangemeld zijn als admin.
+- Klik list -> quiz list in de navbar.
+
+
+## Aanpassen van een quiz
+
+![](readmeimg/deleteknopquiz.png)
+![](readmeimg/updatequiz.png)
+
+
+- Je moet aangemeld zijn als admin.
+- Doe de stappen van 'een quiz kiezen'
+- Klik op het tandwieltje
+- Vul de data in
+- Klik 'Update Quiz'
