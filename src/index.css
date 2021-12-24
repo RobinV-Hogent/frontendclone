@@ -25,6 +25,12 @@ main {
   margin: 0 auto;
 }
 
+.navItem {
+  color: gray;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
 .banner {
   width: 100%;
   height: 500px;

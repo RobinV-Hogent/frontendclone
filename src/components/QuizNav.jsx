@@ -15,24 +15,30 @@ export default function QuizNav() {
     <>
       <Navbar className="shadowBoxNav" collapseOnSelect expand="lg">
         <Container>
-          <Navbar.Brand href="/">Robin Quizzes</Navbar.Brand>
+          <Navbar.Brand>Robin Quizzes</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/">Home</Nav.Link>
+              <Link to="/">Home</Link>
               {user?.roles.includes("admin") ? (
                 <>
                   <NavDropdown title="Lists">
-                    <NavDropdown.Item href="/quiz/list">
-                      Quiz List
+                    <NavDropdown.Item>
+                      <Link to="/quiz/list" data-cy="navScoreList">
+                        Quiz List
+                      </Link>
                     </NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="/category/list">
-                      Category List
+                    <NavDropdown.Item>
+                      <Link to="/category/list" data-cy="navScoreList">
+                        Category List
+                      </Link>
                     </NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="/score/list" data-cy="navScoreList">
-                      Score List
+                    <NavDropdown.Item>
+                      <Link to="/score/list" data-cy="navScoreList">
+                        Score List
+                      </Link>
                     </NavDropdown.Item>
                   </NavDropdown>
                 </>
@@ -41,22 +47,18 @@ export default function QuizNav() {
             <Nav>
               {isAuthed ? (
                 <>
-                  <Nav.Link
-                    href={`/userdata/${user?.id}`}
-                    data-cy="quizNavUsername"
-                  >
+                  <Link to={`/userdata/${user?.id}`} data-cy="quizNavUsername">
                     {user?.name}
-                  </Nav.Link>
+                  </Link>
 
-                  <Nav.Link variant="primary" onClick={handleLogout}>
+                  <Link variant="primary" onClick={handleLogout}>
                     Sign out
-                  </Nav.Link>
+                  </Link>
                 </>
               ) : (
                 <>
-                  <Link to={`/register`}>test</Link>
-                  <Nav.Link href="/login">Sign in</Nav.Link>
-                  <Nav.Link href="/register">Register</Nav.Link>
+                  <Link to="/login">Sign in</Link>
+                  <Link to="/register">Register</Link>
                 </>
               )}
             </Nav>
