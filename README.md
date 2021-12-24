@@ -19,7 +19,7 @@
 
 - Je kan inloggen door een nieuw account aan te maken door op register te klikken in de navbar, dit zal een user account maken
 
-- Als je admin rechten wilt dan logt u in met
+- Als je admin rechten wilt dan logt u in met (Deze credentials werken online en lokaal)
     - email: adminAccount@mail.com
     - password: $minad25
 
