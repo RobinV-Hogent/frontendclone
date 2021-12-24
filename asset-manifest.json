@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/frontendweb-karine-2122-robinv-hogent/static/css/main.dea1fcf5.chunk.css",
-    "main.js": "/frontendweb-karine-2122-robinv-hogent/static/js/main.822edab0.chunk.js",
-    "main.js.map": "/frontendweb-karine-2122-robinv-hogent/static/js/main.822edab0.chunk.js.map",
-    "runtime-main.js": "/frontendweb-karine-2122-robinv-hogent/static/js/runtime-main.1e7b7f25.js",
-    "runtime-main.js.map": "/frontendweb-karine-2122-robinv-hogent/static/js/runtime-main.1e7b7f25.js.map",
-    "static/js/2.527601ce.chunk.js": "/frontendweb-karine-2122-robinv-hogent/static/js/2.527601ce.chunk.js",
-    "static/js/2.527601ce.chunk.js.map": "/frontendweb-karine-2122-robinv-hogent/static/js/2.527601ce.chunk.js.map",
-    "static/js/3.a9459c50.chunk.js": "/frontendweb-karine-2122-robinv-hogent/static/js/3.a9459c50.chunk.js",
-    "static/js/3.a9459c50.chunk.js.map": "/frontendweb-karine-2122-robinv-hogent/static/js/3.a9459c50.chunk.js.map",
-    "index.html": "/frontendweb-karine-2122-robinv-hogent/index.html",
-    "static/css/main.dea1fcf5.chunk.css.map": "/frontendweb-karine-2122-robinv-hogent/static/css/main.dea1fcf5.chunk.css.map",
-    "static/js/2.527601ce.chunk.js.LICENSE.txt": "/frontendweb-karine-2122-robinv-hogent/static/js/2.527601ce.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/frontendweb-karine-2122-robinv-hogent/static/media/bg.6aa16106.png"
+    "main.css": "/frontendweb-karine-2122-RobinV-Hogent/static/css/main.a30571d1.chunk.css",
+    "main.js": "/frontendweb-karine-2122-RobinV-Hogent/static/js/main.822edab0.chunk.js",
+    "main.js.map": "/frontendweb-karine-2122-RobinV-Hogent/static/js/main.822edab0.chunk.js.map",
+    "runtime-main.js": "/frontendweb-karine-2122-RobinV-Hogent/static/js/runtime-main.6f57f41f.js",
+    "runtime-main.js.map": "/frontendweb-karine-2122-RobinV-Hogent/static/js/runtime-main.6f57f41f.js.map",
+    "static/js/2.527601ce.chunk.js": "/frontendweb-karine-2122-RobinV-Hogent/static/js/2.527601ce.chunk.js",
+    "static/js/2.527601ce.chunk.js.map": "/frontendweb-karine-2122-RobinV-Hogent/static/js/2.527601ce.chunk.js.map",
+    "static/js/3.a9459c50.chunk.js": "/frontendweb-karine-2122-RobinV-Hogent/static/js/3.a9459c50.chunk.js",
+    "static/js/3.a9459c50.chunk.js.map": "/frontendweb-karine-2122-RobinV-Hogent/static/js/3.a9459c50.chunk.js.map",
+    "index.html": "/frontendweb-karine-2122-RobinV-Hogent/index.html",
+    "static/css/main.a30571d1.chunk.css.map": "/frontendweb-karine-2122-RobinV-Hogent/static/css/main.a30571d1.chunk.css.map",
+    "static/js/2.527601ce.chunk.js.LICENSE.txt": "/frontendweb-karine-2122-RobinV-Hogent/static/js/2.527601ce.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/frontendweb-karine-2122-RobinV-Hogent/static/media/bg.6aa16106.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.1e7b7f25.js",
+    "static/js/runtime-main.6f57f41f.js",
     "static/js/2.527601ce.chunk.js",
-    "static/css/main.dea1fcf5.chunk.css",
+    "static/css/main.a30571d1.chunk.css",
     "static/js/main.822edab0.chunk.js"
   ]
 }
