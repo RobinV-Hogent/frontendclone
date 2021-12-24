@@ -67,8 +67,12 @@ export default function QuizNav() {
                 </>
               ) : (
                 <>
-                  <Link to="/login">Sign in</Link>
-                  <Link to="/register">Register</Link>
+                  <Link to="/login" className="navItem">
+                    Sign in
+                  </Link>
+                  <Link to="/register" className="navItem">
+                    Register
+                  </Link>
                 </>
               )}
             </Nav>
