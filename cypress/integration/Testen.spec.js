@@ -8,7 +8,7 @@ describe('Testen', () => {
         cy.get('[data-cy=quizNavUsername]').contains('AdminUser')
     })
 
-    it('edit quiz test', () => {
+    it('edit quiz', () => {
         cy.updateQuiz()
         cy.wait(1000)
         cy.visit('http://localhost:3000/quiz/list')
