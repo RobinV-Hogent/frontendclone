@@ -30,8 +30,6 @@ export default function QuizEdit() {
   const { id } = useParams();
   const { error, user } = useSession();
 
-  console.log(user);
-
   const {
     data: currentQuiz,
     isLoading,
