@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/frontendweb-karine-2122-RobinV-Hogent/static/css/main.73650a60.chunk.css",
+    "main.css": "/frontendweb-karine-2122-RobinV-Hogent/static/css/main.d12717a0.chunk.css",
     "main.js": "/frontendweb-karine-2122-RobinV-Hogent/static/js/main.38b22c41.chunk.js",
     "main.js.map": "/frontendweb-karine-2122-RobinV-Hogent/static/js/main.38b22c41.chunk.js.map",
     "runtime-main.js": "/frontendweb-karine-2122-RobinV-Hogent/static/js/runtime-main.6f57f41f.js",
@@ -10,14 +10,14 @@
     "static/js/3.a9459c50.chunk.js": "/frontendweb-karine-2122-RobinV-Hogent/static/js/3.a9459c50.chunk.js",
     "static/js/3.a9459c50.chunk.js.map": "/frontendweb-karine-2122-RobinV-Hogent/static/js/3.a9459c50.chunk.js.map",
     "index.html": "/frontendweb-karine-2122-RobinV-Hogent/index.html",
-    "static/css/main.73650a60.chunk.css.map": "/frontendweb-karine-2122-RobinV-Hogent/static/css/main.73650a60.chunk.css.map",
+    "static/css/main.d12717a0.chunk.css.map": "/frontendweb-karine-2122-RobinV-Hogent/static/css/main.d12717a0.chunk.css.map",
     "static/js/2.08f74c3b.chunk.js.LICENSE.txt": "/frontendweb-karine-2122-RobinV-Hogent/static/js/2.08f74c3b.chunk.js.LICENSE.txt",
     "static/media/index.css": "/frontendweb-karine-2122-RobinV-Hogent/static/media/bg.6aa16106.png"
   },
   "entrypoints": [
     "static/js/runtime-main.6f57f41f.js",
     "static/js/2.08f74c3b.chunk.js",
-    "static/css/main.73650a60.chunk.css",
+    "static/css/main.d12717a0.chunk.css",
     "static/js/main.38b22c41.chunk.js"
   ]
 }
