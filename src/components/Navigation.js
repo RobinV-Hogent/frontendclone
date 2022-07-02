@@ -3,7 +3,7 @@ import { Navbar, Nav, Container, NavDropdown, Button } from "react-bootstrap";
 import { useLogout, useSession } from "../contexts/AuthProvider";
 import { Link } from "react-router-dom";
 
-export default function QuizNav() {
+const Navigation = () => {
   const { isAuthed, user } = useSession();
   const logout = useLogout();
 
@@ -13,7 +13,7 @@ export default function QuizNav() {
 
   return (
     <>
-      <Navbar className="shadowBoxNav" collapseOnSelect expand="lg">
+      {/* <Navbar className="shadowBoxNav" collapseOnSelect expand="lg">
         <Container>
           <Navbar.Brand>Robin Quizzes</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -78,7 +78,18 @@ export default function QuizNav() {
             </Nav>
           </Navbar.Collapse>
         </Container>
-      </Navbar>
+      </Navbar> */}
+
+      <nav>
+        <h1>QUIZZES</h1>
+        <ul>
+          <li>POPULAR</li>
+          <li>HOME</li>
+          <li>ACCOUNT</li>
+        </ul>
+      </nav>
     </>
   );
-}
+};
+
+export default Navigation;

@@ -1,5 +1,5 @@
 import { Table } from "react-bootstrap";
-import { CATEGORY_DATA as data } from "../data/mock-data";
+import { CATEGORY_DATA as data } from "../../data/mock-data";
 
 export default function CategoryTable() {
   return (

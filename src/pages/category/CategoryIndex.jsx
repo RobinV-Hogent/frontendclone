@@ -1,6 +1,6 @@
 import { useSession } from "../../contexts/AuthProvider";
 import { useHistory } from "react-router-dom";
-import CategoryTable from "../../components/CategoryTable";
+import CategoryTable from "../../components/old/CategoryTable";
 
 export default function CategoryIndex() {
   const { user } = useSession();
