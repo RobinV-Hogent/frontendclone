@@ -66,7 +66,7 @@ export const AuthProvider = ({ children }) => {
 
   const setSession = useCallback(async (token, u) => {
     console.log(user);
-    const { exp, userId } = parseJwt(token);
+    const { exp, id } = parseJwt(token);
     const expiry = parseExp(exp);
     const stillValid = expiry >= new Date();
 
@@ -80,8 +80,9 @@ export const AuthProvider = ({ children }) => {
     setToken(token);
     setReady(stillValid && token);
 
-    if (!user && stillValid) {
-      u = await api.getById(userId);
+    if (stillValid) {
+      console.log("fetching user");
+      u = await api.getById(id);
     }
 
     setUser(u);

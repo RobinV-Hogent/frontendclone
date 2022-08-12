@@ -5,20 +5,13 @@ import { useEffect, useState } from "react";
 const QuizOverview = ({ quizzes }) => {
   const [search, setSearch] = useState("");
 
-  if (!Boolean(quizzes)) {
-    return (
-      <>
-        <p>There are no quizzes</p>
-      </>
-    );
-  }
-
   return (
     <>
       <div className="inputSearchContainer">
         <input
           className="searchQuiz"
           type="text"
+          placeholder="Enter a search term"
           onChange={(event) => setSearch(event.target.value)}
         />
       </div>

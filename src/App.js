@@ -1,6 +1,6 @@
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
   Redirect,
 } from "react-router-dom";
@@ -21,9 +21,8 @@ import PrivateRoute from "./components/PrivateRoute";
 import { Quizzes_Provider } from "./contexts/QuizContext";
 import { AuthProvider } from "./contexts/AuthProvider";
 import QuizOverviewPage from "./pages/QuizOverviewPage";
-import io from "socket.io-client";
 import PlayQuizStart from "./pages/PlayQuizStart";
-const socket = io.connect("http://localhost:9000");
+import PlayQuizGatherPlayers from "./pages/PlayQuizGatherPlayers";
 
 function App() {
   return (
@@ -34,7 +33,7 @@ function App() {
             <Navigation />
             <main>
               <div className="App">
-                <Switch>
+                <Routes>
                   <Route path="/login" exact>
                     <Login />
                   </Route>
@@ -63,30 +62,10 @@ function App() {
                     <PlayQuizStart />
                   </PrivateRoute>
 
-                  {/* <PrivateRoute path="/quizzes/detail/:id" exact>
-                    <QuizDetails />
+                  <PrivateRoute path="/gatherpeople/quiz/:id/room/:r" exact>
+                    <PlayQuizGatherPlayers />
                   </PrivateRoute>
-
-                  <PrivateRoute path="/quiz/list" exact>
-                    <QuizIndex />
-                  </PrivateRoute>
-
-                  <PrivateRoute path="/category/list" exact>
-                    <CategoryIndex />
-                  </PrivateRoute>
-
-                  <PrivateRoute path="/score/list" exact>
-                    <ScoreIndex />
-                  </PrivateRoute>
-
-                  <PrivateRoute path="/quiz/edit/:id" exact>
-                    <QuizEdit />
-                  </PrivateRoute>
-
-                  <PrivateRoute path="/userdata/:id" exact>
-                    <UserComponent />
-                  </PrivateRoute> */}
-                </Switch>
+                </Routes>
               </div>
             </main>
           </Router>

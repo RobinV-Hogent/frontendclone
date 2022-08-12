@@ -2,9 +2,6 @@ import QuizOverview from "../components/QuizOverview";
 import { useQuizzes } from "../contexts/QuizContext";
 // import { socket } from "../api/socket";
 import { useCallback, useEffect } from "react";
-import { io } from "socket.io-client";
-
-const socket = io.connect("http://localhost:9001");
 
 const QuizOverviewPage = () => {
   const { quizzes } = useQuizzes();

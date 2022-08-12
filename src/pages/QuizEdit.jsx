@@ -6,7 +6,7 @@ import { useSession } from "../contexts/AuthProvider";
 import { useHistory, useParams } from "react-router-dom";
 import { useMutation, useQuery } from "react-query";
 import * as apiQuizzes from "../api/quizzes";
-import CategoryTable from "../components/CategoryTable";
+import CategoryTable from "../components/old/CategoryTable";
 import { CATEGORY_DATA } from "../data/mock-data";
 
 const validationRules = {
